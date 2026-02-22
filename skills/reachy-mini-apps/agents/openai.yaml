@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reachy Mini Apps"
+  short_description: "Build and debug Reachy Mini SDK apps"
+  default_prompt: "Use $reachy-mini-apps to scaffold, debug, and publish a Reachy Mini app."
