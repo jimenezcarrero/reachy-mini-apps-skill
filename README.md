@@ -56,6 +56,23 @@ After installation:
 Restart Codex to pick up new skills.
 ```
 
+## Data Sources
+
+This skill was authored from the following public sources:
+
+- Reachy Mini official repository (SDK, daemon, examples):  
+  https://github.com/pollen-robotics/reachy_mini
+- Reachy Mini agent guidance (`agents.md`):  
+  https://github.com/pollen-robotics/reachy_mini/blob/develop/agents.md
+- Reachy Mini in-repo skill references (`skills/*.md`):  
+  https://github.com/pollen-robotics/reachy_mini/tree/develop/skills
+- Reachy Mini official documentation:  
+  https://huggingface.co/docs/reachy_mini
+- OpenAI Codex Skills documentation/spec:  
+  https://developers.openai.com/codex/skills
+- OpenAI skills installer reference repository:  
+  https://github.com/openai/skills
+
 ## Notes
 
 - The skill content is intentionally compact and uses `references/` for progressive loading.
