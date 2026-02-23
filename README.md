@@ -45,18 +45,50 @@ $skill-installer install https://github.com/jimenezcarrero/reachy-mini-apps-skil
 
 After installation, restart Codex to load new skills.
 
-## Example Prompts
+## How to Get Good Results
+
+When asking Codex to use `$reachy-mini-apps`, include:
+
+- Robot target: `Lite`, `Wireless`, or `Simulation`
+- Current issue or goal in one sentence
+- Whether you want app scaffolding, debugging, or pre-release checks
+
+Prompt template:
 
 ```text
-Use $reachy-mini-apps to scaffold a Reachy Mini app that tracks a target and exposes a small web UI.
+Use $reachy-mini-apps. I am using <Lite/Wireless/Simulation>. My goal is <goal>. Please give exact commands and a safe step-by-step plan.
 ```
 
-```text
-Use $reachy-mini-apps to debug why my app is jerky when using set_target.
-```
+## Practical Prompt Examples
+
+1. Create a new app
 
 ```text
-Use $reachy-mini-apps to prepare a safe torque enable/disable flow before publishing.
+Use $reachy-mini-apps. I am using Reachy Mini Wireless. Create a new app named "hello_reachy" with the official app assistant, then give me exact commands to check and publish it.
+```
+
+2. Fix jerky movement
+
+```text
+Use $reachy-mini-apps. My app movement is jerky and I suspect bad set_target usage. Show me how to refactor to a single control loop and keep scripted gestures on goto_target.
+```
+
+3. Add camera-driven behavior safely
+
+```text
+Use $reachy-mini-apps. Add a camera-based behavior that tracks a person, but keep motion smooth and include safe motor enable/disable handling.
+```
+
+4. Validate before release
+
+```text
+Use $reachy-mini-apps. Build a practical release checklist for Lite and Simulation, including commands, expected outputs, and how to recover from common failures.
+```
+
+5. Build a browser client
+
+```text
+Use $reachy-mini-apps. I want a small web dashboard that controls head and antennas through REST/WebSocket. Propose endpoints, flow, and a minimal architecture.
 ```
 
 ## What This Skill Covers
@@ -73,22 +105,11 @@ Use $reachy-mini-apps to prepare a safe torque enable/disable flow before publis
 - Setup and testing checklists
 - Debug workflow and source mapping
 
-## Scope Notes
+## When to Use Upstream Docs
 
-This skill is intentionally app-focused.
+This skill is focused on getting apps built and shipped quickly.
 
-Included:
-
-- Practical guidance for building and shipping Reachy Mini applications
-- Safety and debugging workflows for real app development
-
-Not duplicated here:
-
-- Full low-level SDK API catalog
-- Full hardware sensor deep dive
-- OpenAPI codegen playbooks for many languages
-
-For those, use the upstream Reachy Mini SDK/docs and daemon docs listed in Data Sources.
+If you need complete low-level SDK coverage, detailed hardware internals, or broader API material, use the official Reachy Mini repositories and docs listed in Data Sources.
 
 ## Skill References
 
@@ -152,6 +173,14 @@ This skill was authored from the following public sources:
   https://developers.openai.com/codex/skills
 - OpenAI skills installer reference repository:
   https://github.com/openai/skills
+
+## Inspiration
+
+This Codex skill was inspired by the Claude-oriented Reachy Mini skill project:
+
+- https://github.com/jjmartres/reachy-mini-sdk-skill
+
+This repository adapts that idea for Codex installation and Codex-oriented workflows.
 
 ## License
 
