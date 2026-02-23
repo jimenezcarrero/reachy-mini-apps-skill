@@ -19,6 +19,11 @@ Build Reachy Mini apps with the official workflows and safety patterns.
 - For motion architecture, control loops, and torque safety, read `references/motion-control.md`.
 - For non-Python or remote control, read `references/api-endpoints.md`.
 - For connectivity and runtime failures, read `references/debug-checklist.md`.
+- For LLM-powered or conversational robots, read `references/ai-integration.md`.
+- For antenna/head-driven UX patterns, read `references/interaction-patterns.md`.
+- For mathematical move composition, read `references/symbolic-motion.md`.
+- For first-time machine setup, read `references/setup-environment.md`.
+- For pre-release validation, read `references/testing-apps.md`.
 - For canonical source entry points, read `references/source-map.md`.
 
 ## Non-negotiables

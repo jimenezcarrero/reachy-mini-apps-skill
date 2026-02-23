@@ -14,6 +14,10 @@ For official skill concepts and format, see:
 - Reachy Mini app creation with official `reachy-mini-app-assistant` workflows.
 - Motion architecture (`goto_target` vs `set_target`) and control-loop patterns.
 - Safe motor torque handling to avoid jumps and unstable behavior.
+- AI integration patterns for tool-calling and realtime assistants.
+- Physical interaction patterns (antennas as buttons, head-as-controller).
+- Symbolic motion design for parameterized behaviors.
+- Setup and testing references for first-run and release readiness.
 - REST/WebSocket endpoint references for non-Python clients.
 - Troubleshooting checklist for daemon, app, and runtime issues.
 
@@ -27,11 +31,16 @@ For official skill concepts and format, see:
         ├── SKILL.md
         ├── agents/openai.yaml
         └── references/
+            ├── ai-integration.md
             ├── api-endpoints.md
             ├── app-lifecycle.md
             ├── debug-checklist.md
+            ├── interaction-patterns.md
             ├── motion-control.md
-            └── source-map.md
+            ├── setup-environment.md
+            ├── symbolic-motion.md
+            ├── source-map.md
+            └── testing-apps.md
 ```
 
 ## Install
@@ -75,5 +84,5 @@ This skill was authored from the following public sources:
 
 ## Notes
 
-- The skill content is intentionally compact and uses `references/` for progressive loading.
+- The skill keeps a concise core and uses `references/` for progressive loading.
 - This repository contains only the skill so it can be shared independently from app source code.
