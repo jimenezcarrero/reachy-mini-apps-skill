@@ -1,0 +1,5 @@
+# Windows alternate data stream sidecars
+*:Zone.Identifier
+
+# OS metadata
+.DS_Store

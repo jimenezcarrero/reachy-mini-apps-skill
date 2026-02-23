@@ -1,31 +1,118 @@
-# Reachy Mini Apps Skill
+<div align="center">
+  <h1>Reachy Mini Apps Skill for Codex</h1>
+  <img src="Reachy_mini_Codex_skill.png" alt="Reachy Mini Codex Skill" width="760" />
+</div>
 
-Repository containing a **Codex skill** for building, debugging, and publishing Reachy Mini apps safely.
+<p align="center">
+  <strong>Codex-installable skill for building, debugging, and publishing Reachy Mini apps with official SDK and daemon workflows.</strong>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
+  <a href="https://developers.openai.com/codex/skills"><img src="https://img.shields.io/badge/Codex-Skills-black.svg" alt="Codex Skills"></a>
+  <a href="https://github.com/pollen-robotics/reachy_mini"><img src="https://img.shields.io/badge/Reachy%20Mini-SDK-orange.svg" alt="Reachy Mini SDK"></a>
+</p>
+
+---
 
 ## Codex Skill Context
 
-This repository is designed for Codex skill installation and usage.
+This repository is focused on a single Codex skill at:
 
-For official skill concepts and format, see:
+- `skills/reachy-mini-apps`
+
+It is structured for installation through Codex skill tooling, not as a full robot app/source monorepo.
+
+Codex skill format and behavior reference:
+
 - https://developers.openai.com/codex/skills
+
+## Install in Codex
+
+Option 1, install with the official installer script:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo jimenezcarrero/reachy-mini-apps-skill \
+  --path skills/reachy-mini-apps
+```
+
+Option 2, install with your `$skill-installer` wrapper:
+
+```bash
+$skill-installer install https://github.com/jimenezcarrero/reachy-mini-apps-skill/tree/main/skills/reachy-mini-apps
+```
+
+After installation, restart Codex to load new skills.
+
+## Example Prompts
+
+```text
+Use $reachy-mini-apps to scaffold a Reachy Mini app that tracks a target and exposes a small web UI.
+```
+
+```text
+Use $reachy-mini-apps to debug why my app is jerky when using set_target.
+```
+
+```text
+Use $reachy-mini-apps to prepare a safe torque enable/disable flow before publishing.
+```
 
 ## What This Skill Covers
 
-- Reachy Mini app creation with official `reachy-mini-app-assistant` workflows.
-- Motion architecture (`goto_target` vs `set_target`) and control-loop patterns.
-- Safe motor torque handling to avoid jumps and unstable behavior.
-- AI integration patterns for tool-calling and realtime assistants.
-- Physical interaction patterns (antennas as buttons, head-as-controller).
-- Symbolic motion design for parameterized behaviors.
-- Setup and testing references for first-run and release readiness.
-- REST/WebSocket endpoint references for non-Python clients.
-- Troubleshooting checklist for daemon, app, and runtime issues.
+- App creation, checking, and publishing with `reachy-mini-app-assistant`
+- Motion architecture (`goto_target` vs `set_target`)
+- Safe motor torque handling
+- REST and WebSocket endpoint usage
+- AI integration patterns for Reachy Mini apps
+- Interaction patterns (antennas as buttons, head-as-controller)
+- Symbolic motion composition
+- Setup and testing checklists
+- Debug workflow and source mapping
+
+## Scope Notes
+
+This skill is intentionally app-focused.
+
+Included:
+
+- Practical guidance for building and shipping Reachy Mini applications
+- Safety and debugging workflows for real app development
+
+Not duplicated here:
+
+- Full low-level SDK API catalog
+- Full hardware sensor deep dive
+- OpenAPI codegen playbooks for many languages
+
+For those, use the upstream Reachy Mini SDK/docs and daemon docs listed in Data Sources.
+
+## Skill References
+
+| File | Purpose |
+|------|---------|
+| `skills/reachy-mini-apps/SKILL.md` | Entry instructions and routing |
+| `skills/reachy-mini-apps/references/app-lifecycle.md` | Create/check/publish workflows |
+| `skills/reachy-mini-apps/references/motion-control.md` | Motion, control loops, torque safety |
+| `skills/reachy-mini-apps/references/api-endpoints.md` | REST/WebSocket endpoint map |
+| `skills/reachy-mini-apps/references/debug-checklist.md` | Troubleshooting sequence |
+| `skills/reachy-mini-apps/references/ai-integration.md` | LLM and tool-calling patterns |
+| `skills/reachy-mini-apps/references/interaction-patterns.md` | Physical interaction design |
+| `skills/reachy-mini-apps/references/symbolic-motion.md` | Formula-based move design |
+| `skills/reachy-mini-apps/references/setup-environment.md` | First-run machine setup |
+| `skills/reachy-mini-apps/references/testing-apps.md` | Pre-release validation |
+| `skills/reachy-mini-apps/references/source-map.md` | Canonical source file map |
 
 ## Repository Layout
 
 ```text
 .
+├── .gitignore
+├── LICENSE
+├── NOTICE
 ├── README.md
+├── Reachy_mini_Codex_skill.png
 └── skills/
     └── reachy-mini-apps/
         ├── SKILL.md
@@ -38,51 +125,30 @@ For official skill concepts and format, see:
             ├── interaction-patterns.md
             ├── motion-control.md
             ├── setup-environment.md
-            ├── symbolic-motion.md
             ├── source-map.md
+            ├── symbolic-motion.md
             └── testing-apps.md
-```
-
-## Install
-
-Option 1: using the installer script directly.
-
-```bash
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo jimenezcarrero/reachy-mini-apps-skill \
-  --path skills/reachy-mini-apps
-```
-
-Option 2: using your `$skill-installer` command wrapper.
-
-```bash
-$skill-installer install https://github.com/jimenezcarrero/reachy-mini-apps-skill/tree/main/skills/reachy-mini-apps
-```
-
-After installation:
-
-```text
-Restart Codex to pick up new skills.
 ```
 
 ## Data Sources
 
 This skill was authored from the following public sources:
 
-- Reachy Mini official repository (SDK, daemon, examples):  
+- Reachy Mini official repository (SDK, daemon, examples):
   https://github.com/pollen-robotics/reachy_mini
-- Reachy Mini agent guidance (`agents.md`):  
+- Reachy Mini agent guidance (`agents.md`):
   https://github.com/pollen-robotics/reachy_mini/blob/develop/agents.md
-- Reachy Mini in-repo skill references (`skills/*.md`):  
+- Reachy Mini in-repo skill references (`skills/*.md`):
   https://github.com/pollen-robotics/reachy_mini/tree/develop/skills
-- Reachy Mini official documentation:  
+- Reachy Mini official documentation:
   https://huggingface.co/docs/reachy_mini
-- OpenAI Codex Skills documentation/spec:  
+- OpenAI Codex Skills documentation/spec:
   https://developers.openai.com/codex/skills
-- OpenAI skills installer reference repository:  
+- OpenAI skills installer reference repository:
   https://github.com/openai/skills
 
-## Notes
+## License
 
-- The skill keeps a concise core and uses `references/` for progressive loading.
-- This repository contains only the skill so it can be shared independently from app source code.
+Licensed under **Apache License 2.0**. See `LICENSE`.
+
+Attribution notices for adapted guidance are listed in `NOTICE`.

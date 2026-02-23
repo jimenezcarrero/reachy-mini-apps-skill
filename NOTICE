@@ -1,0 +1,11 @@
+Reachy Mini Apps Skill for Codex
+Copyright 2026 reachy-mini-apps-skill contributors
+
+This project includes guidance and references adapted from publicly available
+Reachy Mini resources, including:
+
+- https://github.com/pollen-robotics/reachy_mini
+- https://huggingface.co/docs/reachy_mini
+
+Reachy Mini is a trademark and project of Pollen Robotics.
+This repository is an independent community skill package.
