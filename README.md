@@ -65,6 +65,8 @@ Use $reachy-mini-apps to prepare a safe torque enable/disable flow before publis
 - Motion architecture (`goto_target` vs `set_target`)
 - Safe motor torque handling
 - REST and WebSocket endpoint usage
+- Quick command/snippet lookup for common tasks
+- Camera/audio/IMU handling patterns for app flows
 - AI integration patterns for Reachy Mini apps
 - Interaction patterns (antennas as buttons, head-as-controller)
 - Symbolic motion composition
@@ -96,6 +98,8 @@ For those, use the upstream Reachy Mini SDK/docs and daemon docs listed in Data 
 | `skills/reachy-mini-apps/references/app-lifecycle.md` | Create/check/publish workflows |
 | `skills/reachy-mini-apps/references/motion-control.md` | Motion, control loops, torque safety |
 | `skills/reachy-mini-apps/references/api-endpoints.md` | REST/WebSocket endpoint map |
+| `skills/reachy-mini-apps/references/api-quick-reference.md` | Fast SDK/REST command lookup |
+| `skills/reachy-mini-apps/references/sensors-media.md` | Camera/audio/IMU usage patterns |
 | `skills/reachy-mini-apps/references/debug-checklist.md` | Troubleshooting sequence |
 | `skills/reachy-mini-apps/references/ai-integration.md` | LLM and tool-calling patterns |
 | `skills/reachy-mini-apps/references/interaction-patterns.md` | Physical interaction design |
@@ -120,10 +124,12 @@ For those, use the upstream Reachy Mini SDK/docs and daemon docs listed in Data 
         └── references/
             ├── ai-integration.md
             ├── api-endpoints.md
+            ├── api-quick-reference.md
             ├── app-lifecycle.md
             ├── debug-checklist.md
             ├── interaction-patterns.md
             ├── motion-control.md
+            ├── sensors-media.md
             ├── setup-environment.md
             ├── source-map.md
             ├── symbolic-motion.md

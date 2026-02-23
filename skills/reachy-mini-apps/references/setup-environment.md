@@ -43,6 +43,12 @@ source .venv/bin/activate
 pip install "reachy-mini"
 ```
 
+## Platform caveats
+
+- Wireless from a laptop/desktop may need GStreamer packages for stable remote media.
+- Lite on Linux may require USB serial permissions (`udev` rules and `dialout` group).
+- Simulation validates logic and APIs well, but does not fully represent real media latency or physical interaction.
+
 ## Clone core references
 
 ```bash
@@ -65,4 +71,3 @@ Create `agents.local.md` in your active project with:
 - OS and shell
 - Python environment tool
 - Resource folder path
-
